@@ -1,6 +1,6 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name) : name(name), hitpoints(10), energy_points(10), attack_damage(0)
+ClapTrap::ClapTrap(std::string name) : name(name), hitpoints(100), energy_points(50), attack_damage(20)
 {
 	std::cout << "Default construtor called" << std::endl;
 	return ;
@@ -29,7 +29,7 @@ void	ClapTrap::attack(std::string const & target)
 	if (this->energy_points > 0)
 	{
 		std::cout << "ClapTrap " << this->name << " attack " << target << ", causing " << this->attack_damage << " points of damage!" << std::endl;
-		this->energy_points--;
+		this->energy_points -= 5;
 		std::cout << "He has " << this->energy_points << " energy left now!" << std::endl;
 	}
 	else
