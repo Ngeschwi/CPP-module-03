@@ -1,6 +1,5 @@
 SRCS	=	main.cpp \
-			ClapTrap.cpp \
-			ScavTrap.cpp
+			ClapTrap.cpp 
 
 OBJS	=	$(SRCS:.cpp=.o)
 
@@ -17,7 +16,7 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) 
 
-$(OBJS) : ClapTrap.hpp Scavtrap.hpp
+$(OBJS) : ClapTrap.hpp
 
 clean :
 	$(RM) $(OBJS)
