@@ -2,7 +2,7 @@
 
 ClapTrap::ClapTrap(std::string name) : name(name), hitpoints(10), energy_points(10), attack_damage(0)
 {
-	std::cout << "Default construtor called" << std::endl;
+	std::cout << "Default construtor ClapTrap called" << std::endl;
 	return ;
 }
 
@@ -22,6 +22,12 @@ ClapTrap &	ClapTrap::operator=(ClapTrap const & rhs)
 std::string	ClapTrap::getName(void) const
 {
 	return this->name;
+}
+
+void	ClapTrap::setName(std::string name)
+{
+	this->name = name;
+	return ;
 }
 
 void	ClapTrap::attack(std::string const & target)
@@ -63,6 +69,6 @@ void	ClapTrap::beRepaired(unsigned int amount)
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Destructor ClapTrap called" << std::endl;
 	return ;
 }

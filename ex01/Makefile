@@ -1,18 +1,20 @@
 SRCS	=	main.cpp \
 			ClapTrap.cpp \
-			Scavtrap.hpp
+			ScavTrap.cpp 
 
 OBJS	=	$(SRCS:.cpp=.o)
 
-NAME	=	claptrap
+LINK	=	-I/ClapTrap.hpp -I/ScavTrap.hpp
+
+NAME	=	scavtrap
 CC		=	clang++
 CFLAGS	=	-Wall -Wextra -Werror
 RM		=	rm -rf
 
 all : $(NAME)
 
-%.o : %.cpp
-	$(CC) $(CFLAGS) -o $@ -c $<
+%.o : %.cpp 
+	$(CC) $(CFLAGS) $(LINK) -o $@ -c $<
 
 $(NAME) : $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) 
@@ -26,3 +28,5 @@ fclean : clean
 	$(RM) $(NAME)
 
 re : fclean $(NAME)
+
+.PHONY:		all clean fclean re

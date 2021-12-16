@@ -6,6 +6,7 @@
 # include <stdlib.h>
 # include <iostream>
 # include <iomanip>
+// # include "ScavTrap.hpp"
 
 class ClapTrap
 {
@@ -23,9 +24,10 @@ class ClapTrap
 		ClapTrap &	operator=(ClapTrap const & src);
 
 		std::string	getName(void) const;
-		void	attack(std::string const & target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
+		void		setName(std::string name);
+		void		attack(std::string const & target);
+		void		takeDamage(unsigned int amount);
+		void		beRepaired(unsigned int amount);
 };
 
 #endif
