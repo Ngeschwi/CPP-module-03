@@ -3,10 +3,16 @@
 
 # include "ClapTrap.hpp"
 
-class ScavTrap
+class ScavTrap : public ClapTrap
 {
-	private:
 	public:
+		ScavTrap(std::string name);
+		ScavTrap(ScavTrap const & src);
+		~ScavTrap(void);
+
+		ScavTrap &	operator=(ScavTrap const & src);
+
+		void	guardGate(void) const;
 };
 
 #endif
