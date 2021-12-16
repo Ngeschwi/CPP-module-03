@@ -19,13 +19,18 @@ ScavTrap::ScavTrap(ScavTrap const & src) : ClapTrap(src)
 ScavTrap &	ScavTrap::operator=(ScavTrap const & rhs)
 {
 	if (this != &rhs)
-		ClapTrap::setName(ClapTrap::getName());
+	{
+		this->name = rhs.getName();
+		this->hitpoints = 100;
+		this->energy_points = 100;
+		this->attack_damage = 30;
+	}
 	return *this;
 }
 
 void	ScavTrap::guardGate(void) const
 {
-	std::cout << "Scavtrap " << ClapTrap::getName() << " enterred in gate keeper mode!" << std::endl;
+	std::cout << "Scavtrap " << this->name << " enterred in gate keeper mode!" << std::endl;
 	return ;
 }
 

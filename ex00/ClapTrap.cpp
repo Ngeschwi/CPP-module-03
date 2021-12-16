@@ -15,7 +15,12 @@ ClapTrap::ClapTrap(ClapTrap const & src)
 ClapTrap &	ClapTrap::operator=(ClapTrap const & rhs)
 {
 	if (this != &rhs)
+	{
 		this->name = rhs.getName();
+		this->hitpoints = 10;
+		this->energy_points = 10;
+		this->attack_damage = 0;
+	}
 	return *this;
 }
 

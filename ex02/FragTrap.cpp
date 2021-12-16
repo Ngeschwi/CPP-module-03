@@ -19,7 +19,12 @@ FragTrap::FragTrap(FragTrap const & src) : ClapTrap(src)
 FragTrap &	FragTrap::operator=(FragTrap const & rhs)
 {
 	if (this != &rhs)
-		ClapTrap::setName(ClapTrap::getName());
+	{
+		this->name = rhs.getName();
+		this->hitpoints = 100;
+		this->energy_points = 100;
+		this->attack_damage = 30;
+	}
 	return *this;
 }
 
