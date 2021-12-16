@@ -22,6 +22,7 @@ ScavTrap &	ScavTrap::operator=(ScavTrap const & rhs)
 void	ScavTrap::guardGate(void) const
 {
 	std::cout << "Scavtrap " << ClapTrap::getName() << " enterred in gate keeper mode!" << std::endl;
+	return ;
 }
 
 ScavTrap::~ScavTrap(void)
